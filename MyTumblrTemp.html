@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{Visual Poetry Nerds}</title>
+  
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter|Covered+By+Your+Grace|Rock+Salt' rel='stylesheet' type='text/css'>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+           color: #fff;
+           font-family: "Rock Salt", sans-serif;
+           font-size: 36px;
+           margin-top: 50px;
+        }
+        h2 {
+            color: #fff;
+            font-family: "Covered By Your Grace", sans-serif;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        h3 {
+            margin-top: 50px;
+        }
+        .textposttitle {
+            font-family: "Architects Daughter", sans-serif;
+            font-size: 26px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        .textpostbody {
+            font-family: "Architects Daughter", sans-serif;
+            font-size: 15px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        body {
+            background: {color:Background} url('http://wallpapercave.com/wp/oDm0RF6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: relative;
+            background-size: cover;            
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        .avatar {
+            margin-top: 100px;
+        }
+        .wrap {
+            margin-top: 80px;
+        }
+        .photodeco {
+            box-shadow: 0 0 5px 5px #888;
+        }
+        .tags {
+            display: inline;
+            font-family: "Architects Daughter", sans-serif;
+            text-decoration: none;
+            font-size: 10px;
+            color: #fff;
+        }
+        .info {
+            font-family: "Architects Daughter", sans-serif;
+            font-size: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .icon {
+            height: 10px;
+            width: 10px;
+        }
+        
+        .footer {
+            font-family: "Covered By Your Grace", sans-serif;
+            text-decoration: none;
+            color: #fff;
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px;"
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="{PortraitURL-128}" class="avatar">
+        </div>
+        <div>
+            <h1> {Title} </h1>
+        </div>
+        <div>
+            <h2> {Description}</h2>
+        </div>
+    </header>
+    
+    <section>
+    <div class="wrap">
+        {block:Posts}
+            {block:Text}
+                {block:Title}
+                    <h3><a class="textposttitle" href="Permalink">{Title}</a></h3>
+                {/block:Title}
+                {block:Body}
+                    <a class="textpostbody" href="Permalink">{Body}</a>
+                {/block:Body}
+            {/block:Text}
+    </div>
+    <div>
+            {block:Photo}
+                <a class="avatar" href="{Permalink">
+                <img class="wrap" src="{PhotoURL-500}" alt="{PhotoAlt}" width="70%"></a>
+    </div>
+    <div>
+            {/block:Photo}
+            {block:HasTags}
+                {block:Tags}
+                    <a class="tags" href="{TagURL}">#{Tag}</a>
+                {/block:Tags}
+            {/block:HasTags}
+    </div>
+    <div>
+        {block:RebloggedFrom} 
+            <img src="icon.png">
+        {/block:RebloggedFrom}
+    </div>
+    <div>
+        <a class="info" href="{Permalink}"> {Month}{DayOfMonthWithZero}, {Year} 
+        <a href="{LikeURL}" target="blank"> <img class="icon" src="http://www.salvationarmy.org.uk/sites/default/files/styles/gmap_key/public/media/mapping/older-person-heart-key.png?itok=AIAXx42s"> </a>
+        <a class="info" href="{ReblogURL}" target="blank"> <img class="icon" src="http://static.tumblr.com/wveoepk/Y9wo24lkm/reblogbutton.png"> </a>
+        </a>
+    </div>
+        {/block:Posts}
+    </section>
+    
+    <footer> 
+        <a class="footer" title="Back to Top" href="#"> BACK </br> TO TOP</a>
+    </footer>
+    
+</body>
+
+</html>
